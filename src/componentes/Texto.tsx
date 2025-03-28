@@ -1,13 +1,16 @@
 import React from "react";
 import {Text, StyleSheet} from "react-native";
 
-export default function Texto({children}:any){
-    return <Text style={estilos.estilo_textos}>{children}</Text>
+export default function Texto({children, style}:any){
+
+     return <Text style={[estilos.padrao, style]}>{children}</Text>
 }
 
 const estilos = StyleSheet.create({
-    estilo_textos : {
-        color: "navy",
-        fontWeight: "bold",
+    padrao: {
+        fontFamily: "FonteRegular",
+        fontSize: 16,
+        textAlign: "justify",
+        lineHeight: 25,
     }
-});
+})
