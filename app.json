@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "silFazendoArte",
-    "slug": "silFazendoArte",
+    "name": "amicci_doces",
+    "slug": "amicci_doces",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -10,7 +10,7 @@
     "splash": {
       "image": "./assets/splash-icon.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#CB87F9"
     },
     "ios": {
       "supportsTablet": true
@@ -26,7 +26,8 @@
     },
     "plugins": [
       "expo-video",
-      "expo-font"
+      "expo-font",
+      "expo-audio"
     ]
   }
 }
