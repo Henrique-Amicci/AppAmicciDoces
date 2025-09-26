@@ -1,28 +1,18 @@
 import React from "react";
-import { FlatList, View, Image, StyleSheet } from "react-native";
-import Item from "./item.tsx";
-export default function Index({itens}:any){
-    return <View style={estilos.fundo}>
-        <Image source={require('../../../assets/logo/logo.png')} style={estilos.logo} resizeMode="contain" />
-        <FlatList
-                data = {itens.lista}
-                renderItem = {({item}) => <Item item={item}/>}
-                keyExtractor = {(item)=>item.nome}
-            />
-    </View>
-}
+import { FlatList, View } from "react-native";
 
-const estilos = StyleSheet.create({
-    fundo: {
-        backgroundColor: "#252728",
-        paddingVertical: 12,
-        paddingHorizontal: 16,
-        paddingBottom: 180,
-    },
-    logo: {
-        width: 300,
-        height: 300,
-        alignSelf: "center",
-        margin: -80,
-    },
-})
+//Layout dos produtos
+import CadaProduto from './Item';
+import Texto from '../../componentes/Texto';
+import styles from './estilosProdutos';
+
+export default function Index({itens}:any){
+    return <View style={styles.corFundo}>
+            <Texto style={styles.titulo}>{itens.titulo}</Texto>
+            <FlatList 
+                data={itens.lista}
+                renderItem={({item})=> <CadaProduto prod={item}/>}
+                keyExtractor={itens.lista.id}
+            />
+        </View>
+}
